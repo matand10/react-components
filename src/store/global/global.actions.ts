@@ -1,5 +1,5 @@
-import { globalSlice } from "./global.reducer";
+import { commonGlobalSlice } from "./global.reducer";
 
 export const globalCommonActions = {
-  ...globalSlice.actions,
+  ...commonGlobalSlice.actions,
 };

@@ -6,7 +6,7 @@ const initialState: GlobalState = {
   error: null,
 };
 
-export const globalSlice = createSlice({
+export const commonGlobalSlice = createSlice({
   name: "global",
   initialState,
   reducers: {
@@ -25,7 +25,7 @@ export const globalSlice = createSlice({
 
 export const commonGlobalInitialState = initialState;
 export const { incrementLoaderCount, decrementLoaderCount } =
-  globalSlice.actions;
+  commonGlobalSlice.actions;
 
-const globalReducer: Reducer<GlobalState> = globalSlice.reducer;
-export default globalReducer;
+const commonGlobalReducer: Reducer<GlobalState> = commonGlobalSlice.reducer;
+export default commonGlobalReducer;
