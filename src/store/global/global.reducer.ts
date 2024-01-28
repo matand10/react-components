@@ -1,14 +1,14 @@
 import { createSlice, Reducer } from "@reduxjs/toolkit";
 import { GlobalState } from "./global-state";
 
-const commonGlobalinitialState: GlobalState = {
+const initialState: GlobalState = {
   loaderCount: 0,
   error: null,
 };
 
 export const globalSlice = createSlice({
   name: "global",
-  initialState: commonGlobalinitialState,
+  initialState,
   reducers: {
     incrementLoaderCount: (state) => {
       state.loaderCount++;
@@ -19,11 +19,11 @@ export const globalSlice = createSlice({
     resetLoaderCount: (state) => {
       state.loaderCount = 0;
     },
-    clearState: () => commonGlobalinitialState,
+    clearState: () => initialState,
   },
 });
 
-export const globalInitialState = commonGlobalinitialState;
+export const commonGlobalInitialState = initialState;
 export const { incrementLoaderCount, decrementLoaderCount } =
   globalSlice.actions;
 
