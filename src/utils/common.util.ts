@@ -7,3 +7,7 @@ export function sum(...num: number[]) {
 export function veryGoodeeeeNadav() {
     console.log('Very goodeeee')
 }
+
+export function veryNotGoodeeeeMatan() {
+    console.log('Very not goodeeee')
+}
