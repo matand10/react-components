@@ -3,3 +3,7 @@ export function sum(...num: number[]) {
         return acc += item
     }, 0)
 }
+
+export function veryGoodeeeeNadav() {
+    console.log('Very goodeeee')
+}
