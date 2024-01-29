@@ -19,7 +19,6 @@ export const commonGlobalSlice = createSlice({
     resetLoaderCount: (state) => {
       state.loaderCount = 0;
     },
-    clearState: () => initialState,
   },
 });
 
