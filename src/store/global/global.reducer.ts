@@ -24,8 +24,7 @@ export const commonGlobalSlice = createSlice({
 });
 
 export const commonGlobalInitialState = initialState;
-export const { incrementLoaderCount, decrementLoaderCount } =
-  commonGlobalSlice.actions;
+export const { actions: globalCommonActions, reducer: globalReducer } = commonGlobalSlice;
 
 const commonGlobalReducer: Reducer<GlobalState> = commonGlobalSlice.reducer;
 export default commonGlobalReducer;
