@@ -7,6 +7,8 @@ const initialState: GlobalState = {
   error: null,
 };
 
+console.log('Hello')
+
 export const commonGlobalSlice = createSlice({
   name: "global",
   initialState,
