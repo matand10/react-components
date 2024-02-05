@@ -1,22 +1,30 @@
-import { RootState } from "../../store/root-state";
+import { AppStore } from "../../store";
+import { GlobalSliceActionBase, globalCommonActions } from "../../store/global/global.reducer";
 
 type RequestLoaderOptions = {
-    ignore: boolean
+  ignore: boolean;
+};
+
+let _appStore: AppStore;
+let _globalAction: GlobalSliceActionBase;
+
+export function injectStore(store: AppStore) {
+  _appStore = store;
 }
 
-let appStore: RootState;
-
-export function setStore(store: RootState) {
-    appStore = store
+export function injectGlobalActions(globalActions: GlobalSliceActionBase) {
+  _globalAction = globalActions;
 }
 
-export const handleLoader = (loaderOptions?: RequestLoaderOptions, isIncrement: boolean = true) => {
-    if (loaderOptions?.ignore) return;
+export const handleLoader = (
+  loaderOptions?: RequestLoaderOptions,
+  isIncrement: boolean = true
+) => {
+  if (loaderOptions?.ignore) return;
 
-    console.log('appStore', appStore)
-    if (isIncrement) {
-        // store.dispatch(incrementLoaderCount());
-    } else {
-        // store.dispatch(decrementLoaderCount());
-    }
+  if (isIncrement) {
+    _appStore.dispatch(globalCommonActions.decrementLoaderCount());
+  } else {
+    _appStore.dispatch(globalCommonActions.incrementLoaderCount());
+  }
 };
